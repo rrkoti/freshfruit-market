@@ -1,0 +1,23 @@
+// Product catalog data
+const PRODUCTS = [
+  { id: 1, name: "Fresh Strawberries", emoji: "🍓", price: 4.99, unit: "lb", category: "berries", rating: 4.8, reviews: 124, badge: "Best Seller" },
+  { id: 2, name: "Blueberries", emoji: "🫐", price: 6.49, unit: "pint", category: "berries", rating: 4.7, reviews: 89 },
+  { id: 3, name: "Raspberries", emoji: "🟥", price: 5.99, unit: "pint", category: "berries", rating: 4.6, reviews: 67 },
+  { id: 4, name: "Blackberries", emoji: "🫐", price: 5.49, unit: "pint", category: "berries", rating: 4.5, reviews: 54 },
+  { id: 5, name: "Navel Oranges", emoji: "🍊", price: 3.99, unit: "lb", category: "citrus", rating: 4.8, reviews: 156, badge: "Organic" },
+  { id: 6, name: "Lemons", emoji: "🍋", price: 2.99, unit: "lb", category: "citrus", rating: 4.7, reviews: 98 },
+  { id: 7, name: "Grapefruit", emoji: "🍊", price: 3.49, unit: "lb", category: "citrus", rating: 4.4, reviews: 43 },
+  { id: 8, name: "Limes", emoji: "🍋", price: 2.49, unit: "lb", category: "citrus", rating: 4.6, reviews: 61 },
+  { id: 9, name: "Bananas", emoji: "🍌", price: 1.99, unit: "lb", category: "tropical", rating: 4.9, reviews: 210, badge: "Popular" },
+  { id: 10, name: "Mangoes", emoji: "🥭", price: 2.49, unit: "each", category: "tropical", rating: 4.8, reviews: 134 },
+  { id: 11, name: "Pineapple", emoji: "🍍", price: 4.49, unit: "each", category: "tropical", rating: 4.7, reviews: 88 },
+  { id: 12, name: "Papaya", emoji: "🟠", price: 3.99, unit: "each", category: "tropical", rating: 4.3, reviews: 37 },
+  { id: 13, name: "Peaches", emoji: "🍑", price: 4.29, unit: "lb", category: "stone", rating: 4.8, reviews: 102, badge: "Seasonal" },
+  { id: 14, name: "Cherries", emoji: "🍒", price: 7.99, unit: "lb", category: "stone", rating: 4.9, reviews: 145, badge: "Premium" },
+  { id: 15, name: "Plums", emoji: "🟣", price: 3.79, unit: "lb", category: "stone", rating: 4.5, reviews: 58 },
+  { id: 16, name: "Apricots", emoji: "🟠", price: 4.99, unit: "lb", category: "stone", rating: 4.6, reviews: 41 },
+  { id: 17, name: "Watermelon", emoji: "🍉", price: 6.99, unit: "each", category: "melons", rating: 4.7, reviews: 119, badge: "Summer" },
+  { id: 18, name: "Cantaloupe", emoji: "🍈", price: 3.99, unit: "each", category: "melons", rating: 4.6, reviews: 72 },
+  { id: 19, name: "Honeydew", emoji: "🍈", price: 4.49, unit: "each", category: "melons", rating: 4.5, reviews: 48 },
+  { id: 20, name: "Grapes - Red", emoji: "🍇", price: 3.99, unit: "lb", category: "berries", rating: 4.7, reviews: 95 },
+];

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshFruit Market — Premium Fruits Delivered</title>
+    <meta name="description" content="Buy fresh, organic fruits online. Hand-picked, farm-fresh, delivered to your door.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍓</text></svg>">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <p>🚚 Free delivery on orders over $40 • Use code <strong>FRESH40</strong> at checkout</p>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="#" class="logo">
+                <span class="logo__icon">🍓</span>
+                <span class="logo__text">FreshFruit</span>
+            </a>
+            <nav class="nav" id="nav">
+                <a href="#home" class="nav__link">Home</a>
+                <a href="#shop" class="nav__link">Shop</a>
+                <a href="#about" class="nav__link">About</a>
+                <a href="#contact" class="nav__link">Contact</a>
+            </nav>
+            <div class="header__actions">
+                <button class="icon-btn" aria-label="Search" onclick="toggleSearch()">🔍</button>
+                <button class="cart-btn" aria-label="Cart" onclick="openCart()">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="menu-toggle" aria-label="Menu" onclick="toggleMenu()">☰</button>
+            </div>
+        </div>
+        <div class="search-bar" id="searchBar">
+            <input type="text" id="searchInput" placeholder="Search fruits..." oninput="searchProducts(this.value)">
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <span class="hero__badge">🌿 100% Organic & Fresh</span>
+                <h1 class="hero__title">Fresh Fruits <span class="text-accent">Delivered</span> to Your Door</h1>
+                <p class="hero__subtitle">Hand-picked, farm-fresh fruits sourced from local growers. Quality you can taste, delivered with care.</p>
+                <div class="hero__actions">
+                    <a href="#shop" class="btn btn--primary">Shop Now</a>
+                    <a href="#about" class="btn btn--ghost">Learn More</a>
+                </div>
+                <div class="hero__stats">
+                    <div class="stat"><strong>50+</strong><span>Fruit Varieties</span></div>
+                    <div class="stat"><strong>10k+</strong><span>Happy Customers</span></div>
+                    <div class="stat"><strong>24h</strong><span>Fast Delivery</span></div>
+                </div>
+            </div>
+            <div class="hero__visual">
+                <div class="hero__circle">🍎</div>
+                <div class="hero__float hero__float--1">🍌</div>
+                <div class="hero__float hero__float--2">🍇</div>
+                <div class="hero__float hero__float--3">🍊</div>
+                <div class="hero__float hero__float--4">🍓</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container features__grid">
+            <div class="feature">
+                <span class="feature__icon">🚚</span>
+                <h3>Free Delivery</h3>
+                <p>On all orders over $40, delivered fresh to your doorstep.</p>
+            </div>
+            <div class="feature">
+                <span class="feature__icon">🌿</span>
+                <h3>100% Organic</h3>
+                <p>Certified organic fruits grown without harmful pesticides.</p>
+            </div>
+            <div class="feature">
+                <span class="feature__icon">💰</span>
+                <h3>Best Prices</h3>
+                <p>Farm-direct pricing means you save more on every order.</p>
+            </div>
+            <div class="feature">
+                <span class="feature__icon">↩️</span>
+                <h3>Easy Returns</h3>
+                <p>Not satisfied? Get a full refund within 24 hours.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop -->
+    <section class="shop" id="shop">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-head__eyebrow">Our Products</span>
+                <h2 class="section-head__title">Fresh Fruits Selection</h2>
+                <p class="section-head__subtitle">Browse our hand-picked selection of premium fruits</p>
+            </div>
+            <div class="filters" id="filters">
+                <button class="filter-btn active" data-category="all" onclick="filterProducts('all')">All</button>
+                <button class="filter-btn" data-category="berries" onclick="filterProducts('berries')">Berries</button>
+                <button class="filter-btn" data-category="citrus" onclick="filterProducts('citrus')">Citrus</button>
+                <button class="filter-btn" data-category="tropical" onclick="filterProducts('tropical')">Tropical</button>
+                <button class="filter-btn" data-category="stone" onclick="filterProducts('stone')">Stone Fruit</button>
+                <button class="filter-btn" data-category="melons" onclick="filterProducts('melons')">Melons</button>
+            </div>
+            <div class="products" id="productsGrid">
+                <!-- Products injected by JS -->
+            </div>
+            <p class="no-results" id="noResults" hidden>No fruits found. Try a different search or filter.</p>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container about__inner">
+            <div class="about__visual">
+                <div class="about__img">🧺</div>
+            </div>
+            <div class="about__content">
+                <span class="section-head__eyebrow">Our Story</span>
+                <h2 class="section-head__title">From Farm to Your Table</h2>
+                <p>At FreshFruit Market, we believe everyone deserves access to fresh, nutritious, and delicious fruits. Since 2015, we've partnered with local organic farmers to bring you the highest quality produce at honest prices.</p>
+                <p>Every fruit is hand-picked at peak ripeness and delivered within 24 hours, ensuring you get maximum flavor and nutrition in every bite.</p>
+                <ul class="about__list">
+                    <li>✓ Sourced from certified organic farms</li>
+                    <li>✓ Hand-picked at peak ripeness</li>
+                    <li>✓ Delivered within 24 hours of harvest</li>
+                    <li>✓ Carbon-neutral delivery options</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container newsletter__inner">
+            <div>
+                <h2>Get 10% Off Your First Order</h2>
+                <p>Subscribe to our newsletter for fresh deals, recipes, and seasonal offers.</p>
+            </div>
+            <form class="newsletter__form" onsubmit="subscribeNewsletter(event)">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn btn--primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-head__eyebrow">Get in Touch</span>
+                <h2 class="section-head__title">We'd Love to Hear From You</h2>
+            </div>
+            <div class="contact__grid">
+                <div class="contact__info">
+                    <div class="contact__item"><span>📍</span><div><h4>Visit Us</h4><p>123 Orchard Lane, Freshville, CA 90210</p></div></div>
+                    <div class="contact__item"><span>📞</span><div><h4>Call Us</h4><p>+1 (555) 123-4567</p></div></div>
+                    <div class="contact__item"><span>✉️</span><div><h4>Email Us</h4><p>hello@freshfruitmarket.com</p></div></div>
+                    <div class="contact__item"><span>🕐</span><div><h4>Open Hours</h4><p>Mon–Sat: 8am – 8pm<br>Sun: 9am – 6pm</p></div></div>
+                </div>
+                <form class="contact__form" onsubmit="submitContact(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn--primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer__grid">
+            <div class="footer__col">
+                <a href="#" class="logo logo--light"><span class="logo__icon">🍓</span><span class="logo__text">FreshFruit</span></a>
+                <p>Fresh, organic fruits delivered with love from our farms to your table.</p>
+                <div class="socials">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="YouTube">▶️</a>
+                </div>
+            </div>
+            <div class="footer__col">
+                <h4>Shop</h4>
+                <a href="#shop">All Fruits</a><a href="#shop">Berries</a><a href="#shop">Citrus</a><a href="#shop">Tropical</a>
+            </div>
+            <div class="footer__col">
+                <h4>Company</h4>
+                <a href="#about">About Us</a><a href="#contact">Contact</a><a href="#">Careers</a><a href="#">Blog</a>
+            </div>
+            <div class="footer__col">
+                <h4>Support</h4>
+                <a href="#">Shipping</a><a href="#">Returns</a><a href="#">FAQ</a><a href="#">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>© 2026 FreshFruit Market. All rights reserved. Made with 💚</p>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+        <div class="cart-drawer__head">
+            <h3>Your Cart (<span id="cartItemsCount">0</span>)</h3>
+            <button class="cart-drawer__close" onclick="closeCart()" aria-label="Close cart">✕</button>
+        </div>
+        <div class="cart-drawer__body" id="cartItems">
+            <p class="cart-empty">Your cart is empty.<br><a href="#shop" onclick="closeCart()">Start shopping →</a></p>
+        </div>
+        <div class="cart-drawer__foot" id="cartFoot" hidden>
+            <div class="cart-total">
+                <span>Total:</span>
+                <strong id="cartTotal">$0.00</strong>
+            </div>
+            <button class="btn btn--primary btn--block" onclick="checkout()">Checkout</button>
+            <button class="btn btn--ghost btn--block" onclick="clearCart()">Clear Cart</button>
+        </div>
+    </aside>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
